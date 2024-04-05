@@ -78,7 +78,7 @@ def search_web_ref(query:str, debug=False):
                     res = future.result(timeout=5)
                     results.append(res)
             except concurrent.futures.TimeoutError:
-                print("任务执行超时")
+                print("任務執行超時 Task execution timeout")
                 executor.shutdown(wait=False,cancel_futures=True)
 
             for content in results:
@@ -133,7 +133,7 @@ Remember, do not repeat the context verbatim. Answers must be in Traditional Chi
 
     if debug:
         print(prompts)
-        print("总长度："+ str(len(prompts)))
+        print("總長度 Whole length："+ str(len(prompts)))
     return prompts
 
 
@@ -182,7 +182,7 @@ def ask_internet(query:str,  debug=False):
     if True:
         yield "---"
         yield "\n"
-        yield "参考资料:\n"
+        yield "參考資料 References:\n"
         count = 1
         for url_content in content_list:
             url = url_content.get('url')
